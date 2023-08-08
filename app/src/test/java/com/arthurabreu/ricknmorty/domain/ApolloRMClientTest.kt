@@ -1,9 +1,12 @@
 package com.arthurabreu.ricknmorty.domain
 
+import com.apollographql.apollo3.api.toJson
+import com.apollographql.apollo3.ApolloClient
 import com.arthurabreu.ricknmorty.data.UICharacters
 import com.arthurabreu.ricknmorty.data.UILocation
 import com.arthurabreu.ricknmorty.domain.usecases.GetCharactersUseCase
 import io.mockk.coEvery
+import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
