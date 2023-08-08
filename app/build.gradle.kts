@@ -3,6 +3,13 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("com.apollographql.apollo3") version "4.0.0-alpha.2"
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.arthurabreu")
+    }
 }
 
 android {
@@ -32,11 +39,12 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -64,13 +72,13 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha11")
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
     // Loads Image from link
     implementation("io.coil-kt:coil-compose:2.4.0")
 
     // Navigation with Compose
-    implementation("androidx.navigation:navigation-compose:2.7.0-beta02")
+    implementation("androidx.navigation:navigation-compose:2.6.0")
 
     // Hilt
     implementation("com.google.dagger:hilt-android:2.44")
@@ -78,7 +86,7 @@ dependencies {
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
     // GraphQL
-    implementation("com.apollographql.apollo:apollo-runtime:3.1.0")
+    implementation("com.apollographql.apollo3:apollo-runtime:4.0.0-alpha.2")
 
     // Tests
     testImplementation("junit:junit:4.13.2")
