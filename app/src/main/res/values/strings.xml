@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">RickAndMortyGraphQL</string>
+    <string name="character_image">Character Image</string>
+    <string name="location_unknown">Location Unknown</string>
+    <string name="species">Species: %1$s</string>
+    <string name="status">Status: %1$s</string>
+    <string name="location">Location: %1$s</string>
+    <string name="gender">Gender: %1$s</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.arthurabreu.ricknmorty.data
+package com.arthurabreu.ricknmorty.data.characters
 
 import com.arthurabreu.CharactersQuery
 

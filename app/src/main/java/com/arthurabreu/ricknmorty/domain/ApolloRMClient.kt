@@ -2,8 +2,8 @@ package com.arthurabreu.ricknmorty.domain
 
 import com.apollographql.apollo3.ApolloClient
 import com.arthurabreu.CharactersQuery
-import com.arthurabreu.ricknmorty.data.UICharacters
-import com.arthurabreu.ricknmorty.data.toUICharacters
+import com.arthurabreu.ricknmorty.data.characters.UICharacters
+import com.arthurabreu.ricknmorty.data.characters.toUICharacters
 
 class ApolloRMClient(
     private val apolloClient: ApolloClient

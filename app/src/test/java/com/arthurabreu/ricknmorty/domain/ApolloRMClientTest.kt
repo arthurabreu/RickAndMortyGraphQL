@@ -1,7 +1,7 @@
 package com.arthurabreu.ricknmorty.domain
 
-import com.arthurabreu.ricknmorty.data.UICharacters
-import com.arthurabreu.ricknmorty.data.UILocation
+import com.arthurabreu.ricknmorty.data.characters.UICharacters
+import com.arthurabreu.ricknmorty.data.characters.UILocation
 import com.arthurabreu.ricknmorty.domain.usecases.GetCharactersUseCase
 import io.mockk.coEvery
 import io.mockk.mockk

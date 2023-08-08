@@ -1,6 +1,6 @@
 package com.arthurabreu.ricknmorty.domain
 
-import com.arthurabreu.ricknmorty.data.UICharacters
+import com.arthurabreu.ricknmorty.data.characters.UICharacters
 
 interface RMClient {
 
