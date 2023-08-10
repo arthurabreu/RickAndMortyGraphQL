@@ -53,9 +53,6 @@ fun CharactersScreen(
         contentAlignment = Alignment.Center,
         modifier = Modifier
             .fillMaxSize()
-            .clickable {
-                // TODO
-            }
     ) {
         if(state.isLoading) {
             CircularProgressIndicator(Modifier.align(Alignment.Center))
@@ -80,10 +77,14 @@ fun CharactersScreen(
 @Composable
 fun CharacterItem(
     character: UICharacters,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel: CharactersViewModel = hiltViewModel()
 ) {
     Row(
-        modifier = modifier,
+        modifier = modifier
+            .clickable {
+                viewModel.navigateToCharacterDetails(character.id ?: "0")
+            },
         verticalAlignment = Alignment.CenterVertically
     ) {
         AsyncImage(

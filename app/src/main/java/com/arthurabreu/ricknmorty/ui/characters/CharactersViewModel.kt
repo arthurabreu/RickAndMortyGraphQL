@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.arthurabreu.ricknmorty.data.characters.CharactersState
 import com.arthurabreu.ricknmorty.domain.usecases.GetCharactersUseCase
+import com.arthurabreu.ricknmorty.navigation.Navigator
+import com.arthurabreu.ricknmorty.navigation.destinations.CharactersDestination
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -13,7 +15,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CharactersViewModel @Inject constructor(
-    private val getCharactersUseCase: GetCharactersUseCase
+    private val getCharactersUseCase: GetCharactersUseCase,
+    private val navigator: Navigator
 ): ViewModel() {
 
     private val _state = MutableStateFlow(CharactersState())
@@ -37,5 +40,11 @@ class CharactersViewModel @Inject constructor(
                 isLoading = false
             )
         }
+    }
+
+    fun navigateToCharacterDetails(id: String) {
+        navigator.navigateTo(
+            CharactersDestination.CharacterDetails().withNavigationArguments(id)
+        )
     }
 }
