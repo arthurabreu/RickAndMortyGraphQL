@@ -21,6 +21,8 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -35,16 +37,18 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.arthurabreu.ricknmorty.R
-import com.arthurabreu.ricknmorty.data.characters.CharactersState
 import com.arthurabreu.ricknmorty.data.characters.UICharacters
 
 @Composable
 fun CharactersScreen(
-    state: CharactersState,
+    viewModel: CharactersViewModel = hiltViewModel()
 ) {
+    val state by viewModel.state.collectAsState()
+
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
